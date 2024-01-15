@@ -6,8 +6,46 @@
   <title>Template</title>
 </head>
 <body>
-  <h1>controle</h1>
-  
+  <div class="toolbar">
+    <!-- Themes switcher markup -->
+    <div class="theme-switch">
+      <svg class="theme-switch__icon" role="img" aria-label="Sun icon">
+        <use href="../src/images/sprite.svg#sun"></use>
+      </svg>
+      <div class="theme-switch__control">
+        <input
+          class="theme-switch__toggle" 
+          type="checkbox" 
+          name="theme" 
+          id="theme-switch-toggle"
+          aria-label="Switch between dark and light themes"/>
+        <label 
+          aria-hidden="true"
+          class="theme-switch__track"
+          for="theme-switch-toggle"> </label>
+        <div aria-hidden="true" class="theme-switch__marker"></div> 
+      </div>
+
+      <svg class="theme-switch__icon" aria-label="Moon icon">
+        <use href="../src/images/sprite.svg#moon"></use>
+      </svg>
+    </div> 
+  </div>
+
+  <div class="gallery-container">
+    <form class="search-form" id="search-form">
+      <input
+        class="search-input"
+        type="text"
+        name="query"
+        autocomplete="off"
+        placeholder="Search images"
+      />
+    </form>
+  </div>
+
+  <ul class="gallery-list" id="gallery-list"></ul>
+
   <script src="./index.js"></script>
 </body>
 </html>
