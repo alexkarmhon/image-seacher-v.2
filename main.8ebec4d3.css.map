@@ -1,0 +1,1 @@
+{"version":3,"sources":["sass/_common.scss","sass/main.css"],"names":[],"mappings":"AAAA,EACE,qBCCF,CDEA,GAAI,aCEJ","file":"main.8ebec4d3.css","sourceRoot":"../src","sourcesContent":["* {\n  box-sizing: border-box;\n}\n\nh1 {color: greenyellow;}","* {\n  box-sizing: border-box;\n}\n\nh1 {\n  color: greenyellow;\n}/*# sourceMappingURL=main.css.map */"]}

@@ -1,0 +1,1 @@
+{"version":3,"sources":["js/some_js_partial_code.js","index.js"],"names":["console","log","require"],"mappings":";AAAAA,QAAQC,IAAI;;ACAZ,aAAAC,QAAA","file":"src.0332a2b3.js","sourceRoot":"../src","sourcesContent":["console.log(\"hello\")","import \"./js/some_js_partial_code.js\";"]}
