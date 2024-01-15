@@ -1,1 +1,0 @@
-{"version":3,"sources":["sass/_common.scss"],"names":[],"mappings":"AAAA,EACE,sBAGF,GAAI","file":"src.3fd4d5bd.css","sourceRoot":"../src","sourcesContent":["* {\n  box-sizing: border-box;\n}\n\nh1 {color: rgb(66, 143, 153);}"]}

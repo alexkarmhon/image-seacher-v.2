@@ -1,0 +1,1 @@
+{"version":3,"sources":["js/some_js_partial_code.js","index.js"],"names":["console","log","require"],"mappings":";;;AAAAA,QAAQC,IAAI;;ACCZ,aADAC,QAAA,oBACAA,QAAA","file":"src.d3490faf.js","sourceRoot":"../src","sourcesContent":["console.log(\"hello\")","import \"./sass/main.scss\";\nimport \"./js/some_js_partial_code.js\";"]}
