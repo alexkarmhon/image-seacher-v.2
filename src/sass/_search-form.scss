@@ -21,6 +21,8 @@
 
 .search-input:focus {
   border-color: #2196f3;
+  outline-color: #2196f3;
+  outline-style: groove;
 }
 
 .search-input::placeholder {

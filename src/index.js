@@ -1,2 +1,5 @@
 import "./sass/main.scss";
-import "./js/some_js_partial_code.js";
+import "./js/imageAPIservice.js";
+import "./js/gallery.js";
+import "./js/themes-swither.js";
+import "./js/load-more-btn.js";

@@ -1,51 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ImageSearcherV2</title>
-</head>
-<body>
-  <div class="toolbar">
-    <!-- Themes switcher markup -->
-    <div class="theme-switch">
-      <svg class="theme-switch__icon" role="img" aria-label="Sun icon">
-        <use href="../src/images/sprite.svg#sun"></use>
-      </svg>
-      <div class="theme-switch__control">
-        <input
-          class="theme-switch__toggle" 
-          type="checkbox" 
-          name="theme" 
-          id="theme-switch-toggle"
-          aria-label="Switch between dark and light themes"/>
-        <label 
-          aria-hidden="true"
-          class="theme-switch__track"
-          for="theme-switch-toggle"> </label>
-        <div aria-hidden="true" class="theme-switch__marker"></div> 
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Icons under pictures -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!-- styles for loadMoreBtn  -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
+    <title>ImageSearcherV2</title>
+  </head>
+  <body>
+    <div class="toolbar">
+      <!-- Themes switcher markup -->
+      <div class="theme-switch">
+        <svg class="theme-switch__icon" role="img" aria-label="Sun icon">
+          <use href="../src/images/sprite.svg#sun"></use>
+        </svg>
+        <div class="theme-switch__control">
+          <input
+            class="theme-switch__toggle"
+            type="checkbox"
+            name="theme"
+            id="theme-switch-toggle"
+            aria-label="Switch between dark and light themes"
+          />
+          <label
+            aria-hidden="true"
+            class="theme-switch__track"
+            for="theme-switch-toggle"
+          >
+          </label>
+          <div aria-hidden="true" class="theme-switch__marker"></div>
+        </div>
+
+        <svg class="theme-switch__icon" aria-label="Moon icon">
+          <use href="../src/images/sprite.svg#moon"></use>
+        </svg>
       </div>
+    </div>
 
-      <svg class="theme-switch__icon" aria-label="Moon icon">
-        <use href="../src/images/sprite.svg#moon"></use>
-      </svg>
-    </div> 
-  </div>
+    <div class="gallery-container">
+      <form class="search-form" id="search-form">
+        <input
+          class="search-input"
+          type="text"
+          name="query"
+          autocomplete="off"
+          placeholder="Search images"
+        />
+      </form>
+    </div>
 
-  <div class="gallery-container">
-    <form class="search-form" id="search-form">
-      <input
-        class="search-input"
-        type="text"
-        name="query"
-        autocomplete="off"
-        placeholder="Search images"
-      />
-    </form>
-  </div>
+    <ul class="gallery-list" id="gallery-list"></ul>
 
-  <ul class="gallery-list" id="gallery-list"></ul>
+    <!-- button from bootstrap -->
+    <button
+        type="button"
+        class="button"
+        id="moreBtn"
+        data-action="load-more"
+      >
+        <span
+          class="spinner-border spinner-border-sm spinner is-hidden"
+          role="status"
+          aria-hidden="true"
+        ></span>
+        <span class="label">Load more</span>
+      </button>
 
-  <script src="./index.js"></script>
-</body>
+    <script src="./index.js"></script>
+  </body>
 </html>
