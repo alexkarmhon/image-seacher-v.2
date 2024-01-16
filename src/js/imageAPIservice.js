@@ -27,10 +27,6 @@ export default class ImagesAPIservice {
 
   async fetchImagesByQuery() {
     const data = await fetch(`${this.baseUrl}?key=${this.key}&q=${this.query}&page=${this.page}&per_page=12`);
-    // const {hits} = await data.json();
-  
-    // return hits;
-
     return await data.json()
   }
 }

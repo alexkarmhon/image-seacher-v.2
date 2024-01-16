@@ -1,5 +1,6 @@
 import ImagesAPIservice from "./imageAPIservice";
 import LoadMoreButton from "./load-more-btn";
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const formInput = document.getElementById('search-form');
 const galleryLst = document.getElementById('gallery-list');
@@ -53,23 +54,34 @@ function clearGallery() {
 }
 
 async function renderGallery() {
-  loadMoreButtonIsue.disable();
+  try {
+    loadMoreButtonIsue.disable();
+  
+    const {hits, totalHits} = await imageAPIserviceIsue.fetchImagesByQuery();
+    galleryLst.insertAdjacentHTML('beforeend', createMarkup(hits));
+  
+    if (hits.length * imageAPIserviceIsue.page >= totalHits) { loadMoreButtonIsue.hide() };
+  
+    galleryLst.scrollIntoView({
+      behavior: "smooth",
+      block: "end",
+    });
+    loadMoreButtonIsue.enable(); 
+    loadMoreButtonIsue.show();
 
-  const {hits, totalHits} = await imageAPIserviceIsue.fetchImagesByQuery();
-  galleryLst.insertAdjacentHTML('beforeend', createMarkup(hits));
+  
+  } catch {
+    Notify.failure('Ooops!', {
+      className: "error-notification",
+      borderRadius: "10px"
+    });
+  }
 
-  if (hits.length * imageAPIserviceIsue.page >= totalHits) { loadMoreButtonIsue.hide() };
-
-  loadMoreButtonIsue.enable();
 }
 
 function onLoadMoreBtnClick() {
   imageAPIserviceIsue.incrPage();
   renderGallery();
-  galleryLst.scrollIntoView({
-    behavior: "smooth",
-    block: "end"
-  })
 } 
 
 function onInputSubmit(e) {
@@ -78,14 +90,17 @@ function onInputSubmit(e) {
 
   const value = e.target.elements.query.value.trim();
   if (!value) {
+    Notify.warning("Please enter some query", {
+      className: "warning-notification",
+      borderRadius: "10px"
+    })
     clearGallery();
     return;
   };
   imageAPIserviceIsue.query = value;
+  
   renderGallery();
-
-  loadMoreButtonIsue.show();
-  loadMoreBtn.addEventListener('click', onLoadMoreBtnClick)
 }
 
+loadMoreBtn.addEventListener('click', onLoadMoreBtnClick);
 formInput.addEventListener('submit', onInputSubmit);

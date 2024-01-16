@@ -56,3 +56,10 @@
 
   color: #2196f3;
 }
+
+.warning-notification, 
+.error-notification {
+  position: relative;
+  top: 100px;
+  right: calc(50vw - 53%);
+}
